@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Analytics Hub 📊</title>
+    <!-- Load the Tableau Embedding API v3 library -->
+    <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
     <style>
         /* CSS for styling and animations */
         body {
@@ -111,15 +113,14 @@
             margin-bottom: 1rem;
         }
 
-        /* Responsive Tableau iframe */
-        .tableau-embed iframe {
+        /* Responsive Tableau viz */
+        tableau-viz {
             width: 100%;
             height: 600px;
-            border: none;
         }
 
         @media (max-width: 768px) {
-            .tableau-embed iframe {
+            tableau-viz {
                 height: 400px;
             }
         }
@@ -194,14 +195,13 @@
             </p>
             <div class="tableau-embed">
                 <h3>Dashboard 1: Book2 Analytics 📈</h3>
-                <!-- Embedded Tableau Public Visualization -->
-                <iframe 
-                    src="https://public.tableau.com/views/Book2_17425547536430/Dashboard1?:embed=y&:display_count=n&:origin=viz_share_link" 
-                    width="100%" 
-                    height="600px" 
-                    frameborder="0" 
-                    allowfullscreen="true">
-                </iframe>
+                <!-- Embedded Tableau Public Visualization using Embedding API v3 -->
+                <tableau-viz 
+                    id="tableauViz" 
+                    src="https://public.tableau.com/views/Book2_17425547536430/Dashboard1" 
+                    toolbar="bottom" 
+                    hide-tabs>
+                </tableau-viz>
                 <p>Interact with the dashboard above to explore the data! 🖱️</p>
             </div>
         </div>
