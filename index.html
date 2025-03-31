@@ -138,4 +138,128 @@
 
         .btn:hover {
             transform: scale(1.1);
-            background: linear-gradient
+            background: linear-gradient(90deg, #ff99ac, #ff6a88);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(90deg, #a1c4fd, #c2e9fb);
+            color: #333;
+            text-align: center;
+            padding: 1rem 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.8rem; }
+            nav a { margin: 0 0.5rem; }
+            .container { padding: 0 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Data Analytics Hub 📈✨</h1>
+        <p>Unlock Insights with Tableau Visualizations! 🚀</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">Home 🏠</a>
+        <a href="#tableau">Tableau Insights 📊</a>
+        <a href="#about">About Us ℹ️</a>
+        <a href="#contact">Contact 📧</a>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Welcome Section -->
+        <div class="section" id="home">
+            <h2>Welcome to Our Analytics Platform! 🌟</h2>
+            <p>
+                Dive into the world of data with our interactive Tableau dashboards! We provide insights that help businesses grow, make informed decisions, and uncover hidden trends. Let’s make data fun and actionable! 🎉
+            </p>
+            <a href="#tableau" class="btn">Explore Tableau Dashboards 🚀</a>
+        </div>
+
+        <!-- Tableau Section -->
+        <div class="section" id="tableau">
+            <h2>Tableau Insights 📊</h2>
+            <p>
+                Check out our latest data visualizations below. Interact with the dashboard to explore trends, metrics, and more! 🔍
+            </p>
+            <div class="tableau-embed">
+                <h3>Dashboard 1: Book2 Analytics 📈</h3>
+                <!-- Embedded Tableau Public Visualization -->
+                <iframe 
+                    src="https://public.tableau.com/views/Book2_17425547536430/Dashboard1?:embed=y&:display_count=n&:origin=viz_share_link" 
+                    width="100%" 
+                    height="600px" 
+                    frameborder="0" 
+                    allowfullscreen="true">
+                </iframe>
+                <p>Interact with the dashboard above to explore the data! 🖱️</p>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <div class="section" id="about">
+            <h2>About Us ℹ️</h2>
+            <p>
+                We’re a team of data enthusiasts passionate about turning raw numbers into meaningful stories. With Tableau, we bring data to life! Let’s collaborate and make data-driven decisions together. 🤝
+            </p>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="section" id="contact">
+            <h2>Contact Us 📧</h2>
+            <p>
+                Have questions or want to collaborate? Reach out to us at <a href="mailto:info@datahub.com">info@datahub.com</a> or call us at (123) 456-7890. We’d love to hear from you! 💬
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Data Analytics Hub. All Rights Reserved. Made with ❤️ by xAI</p>
+    </footer>
+
+    <!-- JavaScript for interactivity -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Alert when clicking the Tableau section
+        document.querySelector('.tableau-embed').addEventListener('click', () => {
+            alert('Interact with the Tableau dashboard to explore the data! 🎉');
+        });
+
+        // Add a fun animation to the button on click
+        document.querySelector('.btn').addEventListener('click', function() {
+            this.style.animation = 'bounce 0.5s';
+        });
+
+        // Define the bounce animation
+        const styleSheet = document.createElement('style');
+        styleSheet.innerHTML = `
+            @keyframes bounce {
+                0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+                40% { transform: translateY(-20px); }
+                60% { transform: translateY(-10px); }
+            }
+        `;
+        document.head.appendChild(styleSheet);
+    </script>
+</body>
+</html>
